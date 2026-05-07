@@ -10,7 +10,7 @@ const variant = Astro.props.variant ?? 'home';
       <span>{footer.copyright}</span>
     </div>
     {variant === 'home' ? (
-      <div>{footer.version} · Built in <span class="green">{'{ TypeScript }'}</span></div>
+      <div>{footer.version} · Crafted in <span class="green">{'{ Astro }'}</span></div>
     ) : (
       <div><a href="/">← Back to home</a></div>
     )}
