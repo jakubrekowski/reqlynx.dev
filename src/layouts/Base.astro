@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+const { title, description } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+{description && <meta name="description" content={description} />}
+<link rel="icon" type="image/svg+xml" href="/assets/rdw_favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div class="bg-fx"></div>
+<div class="bg-glow g1"></div>
+<div class="bg-glow g2"></div>
+<div class="bg-glow g3"></div>
+<slot />
+<script>
+  // Inline brand mark — <use> can't reliably cross-fetch external SVG fragments.
+  fetch('/assets/rdw_icon.svg').then(r => r.text()).then(svg => {
+    const m = svg.match(/<path id="body"[^/]*d="([^"]+)"/);
+    if (!m) return;
+    const d = m[1];
+    document.querySelectorAll('svg use').forEach(u => {
+      const parent = u.parentNode!;
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', d);
+      path.setAttribute('fill', '#B1D600');
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.setAttribute('transform', 'matrix(0.17712,0,0,0.17712,-44.198538,-18.624971)');
+      g.appendChild(path);
+      parent.replaceChild(g, u);
+    });
+  }).catch(() => {});
+
+  // Project card spotlight
+  document.querySelectorAll<HTMLElement>('[data-project-card]').forEach(a => {
+    a.addEventListener('mousemove', (e) => {
+      const r = a.getBoundingClientRect();
+      a.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      a.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    });
+  });
+</script>
+</body>
+</html>

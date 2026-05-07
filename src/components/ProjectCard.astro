@@ -1,0 +1,17 @@
+---
+const { project, span } = Astro.props;
+const cls = `project ${span ?? project.span ?? 'span-6'}${project.featured ? ' featured' : ''}`;
+---
+<a class={cls} href={`/projects/${project.id}`} data-project-card>
+  <div class="project-head">
+    <div class="project-meta"><span class="project-id">[ {project.num} ]</span> · {project.org} · {project.year}</div>
+    <span class="project-arrow">↗</span>
+  </div>
+  <div>
+    <h3>{project.name}</h3>
+    <p>{project.summary}</p>
+  </div>
+  <div class="project-tags">
+    {project.tags.map((t: string) => <span class="tag">{t}</span>)}
+  </div>
+</a>

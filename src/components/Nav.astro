@@ -1,0 +1,22 @@
+---
+import site from '../data/site.json';
+const { brand, nav } = site;
+const linkPrefix = Astro.props.linkPrefix ?? '';
+---
+<header class="nav">
+  <div class="shell nav-inner">
+    <a href="/" class="brand" aria-label="ReqLynx Digitalworks">
+      <svg class="lynx-mark" viewBox="0 0 98 127" aria-hidden="true">
+        <use href={`${brand.icon}#body`}></use>
+      </svg>
+      <span class="name-block">
+        <span class="name-1">{brand.name1}</span>
+        <span class="name-2">{brand.name2}</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      {nav.links.map((l) => <a href={`${linkPrefix}${l.href}`}>{l.label}</a>)}
+    </nav>
+    <a href={`${linkPrefix}${nav.cta.href}`} class="nav-cta">{nav.cta.label} <span class="arrow">↗</span></a>
+  </div>
+</header>

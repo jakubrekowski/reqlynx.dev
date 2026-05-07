@@ -1,0 +1,239 @@
+{
+  "$schema": "../schemas/site.schema.json",
+  "brand": {
+    "name1": "REQLYNX",
+    "name2": "DIGITALWORKS",
+    "icon": "/assets/rdw_icon.svg"
+  },
+  "nav": {
+    "links": [
+      {
+        "label": "Work",
+        "href": "#work"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "Stack",
+        "href": "#stack"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ],
+    "cta": {
+      "label": "Start a project",
+      "href": "#contact"
+    }
+  },
+  "hero": {
+    "statusLabel": "Available for new projects · Q3 2026",
+    "headlineHtml": "Software for the<br/><span class=\"brace\">{</span>operational<span class=\"brace\">}</span> edge<br/>of real businesses.",
+    "introHtml": "I'm <strong style=\"color:var(--ink)\">Jakub Rekowski</strong> — fullstack developer, solution architect, devops engineer and graphic designer working under the ReqLynx Digitalworks banner. I build production systems for events, transit, hospitality and the people who run them.",
+    "ctas": [
+      {
+        "label": "See work",
+        "href": "#work",
+        "primary": true,
+        "arrow": "→"
+      },
+      {
+        "label": "Get in touch",
+        "href": "#contact",
+        "arrow": "↗"
+      }
+    ],
+    "codeWindow": {
+      "tabs": [
+        {
+          "label": "about.ts",
+          "active": true
+        },
+        {
+          "label": "stack.ts"
+        },
+        {
+          "label": "contact.ts"
+        }
+      ],
+      "path": "~/reqlynx/portfolio/src/about.ts",
+      "lines": 20,
+      "files": "<div class=\"group-title\">// PROJECT</div><div class=\"file dir\"><span class=\"ic\">▾</span> reqlynx</div><div class=\"indent\"><div class=\"file dir\"><span class=\"ic\">▾</span> src</div><div class=\"indent\"><div class=\"file active\"><span class=\"ic\">▸</span> about.ts</div><div class=\"file\"><span class=\"ic\">▸</span> stack.ts</div><div class=\"file\"><span class=\"ic\">▸</span> contact.ts</div></div><div class=\"file dir\"><span class=\"ic\">▸</span> projects</div><div class=\"file\"><span class=\"ic\">▸</span> README.md</div><div class=\"file\"><span class=\"ic\">▸</span> package.json</div></div><div class=\"group-title\">// STATUS</div><div class=\"file\"><span class=\"ic\" style=\"color:var(--acc)\">●</span> available</div>",
+      "sourceHtml": "<span class=\"c\">// reqlynx.dev — about.ts</span>\n<span class=\"k\">import</span> <span class=\"p\">{</span> <span class=\"v\">Developer</span><span class=\"p\">,</span> <span class=\"v\">Architect</span><span class=\"p\">,</span> <span class=\"v\">Designer</span> <span class=\"p\">}</span> <span class=\"k\">from</span> <span class=\"s\">\"./roles\"</span><span class=\"p\">;</span>\n\n<span class=\"k\">export const</span> <span class=\"v\">jakub</span><span class=\"p\">:</span> <span class=\"t\">Engineer</span> <span class=\"p\">=</span> <span class=\"p\">{</span>\n  <span class=\"v\">name</span><span class=\"p\">:</span>     <span class=\"s\">\"Jakub Rekowski\"</span><span class=\"p\">,</span>\n  <span class=\"v\">studio</span><span class=\"p\">:</span>   <span class=\"s\">\"ReqLynx Digitalworks\"</span><span class=\"p\">,</span>\n  <span class=\"v\">based</span><span class=\"p\">:</span>    <span class=\"s\">\"Poland · remote-first\"</span><span class=\"p\">,</span>\n  <span class=\"v\">roles</span><span class=\"p\">:</span> <span class=\"p\">[</span>\n    <span class=\"v\">Developer</span><span class=\"p\">(</span><span class=\"s\">\"fullstack\"</span><span class=\"p\">),</span>\n    <span class=\"v\">Architect</span><span class=\"p\">(</span><span class=\"s\">\"solutions\"</span><span class=\"p\">),</span>\n    <span class=\"v\">Developer</span><span class=\"p\">(</span><span class=\"s\">\"devops\"</span><span class=\"p\">),</span>\n    <span class=\"v\">Designer</span><span class=\"p\">(</span><span class=\"s\">\"graphic\"</span><span class=\"p\">),</span>\n  <span class=\"p\">],</span>\n  <span class=\"v\">domains</span><span class=\"p\">:</span> <span class=\"p\">[</span><span class=\"s\">\"events\"</span><span class=\"p\">,</span> <span class=\"s\">\"transit\"</span><span class=\"p\">,</span> <span class=\"s\">\"hospitality\"</span><span class=\"p\">,</span> <span class=\"s\">\"ops\"</span><span class=\"p\">],</span>\n  <span class=\"v\">shipped</span><span class=\"p\">:</span>  <span class=\"n\">10</span><span class=\"p\">,</span>\n  <span class=\"v\">available</span><span class=\"p\">:</span> <span class=\"n\">true</span><span class=\"p\">,</span>\n<span class=\"p\">};</span>\n\n<span class=\"c\">// next: write something for you</span>\n<span class=\"k\">export</span> <span class=\"k\">async function</span> <span class=\"f\">build</span><span class=\"p\">(</span><span class=\"v\">idea</span><span class=\"p\">:</span> <span class=\"t\">Brief</span><span class=\"p\">)</span> <span class=\"p\">{</span> <span class=\"cur\"></span>"
+    }
+  },
+  "marquee": [
+    "TypeScript",
+    "NextJS",
+    "NestJS",
+    "Hono",
+    "React",
+    "React Native · Expo",
+    "Svelte",
+    "Tailwind",
+    "PayloadCMS",
+    "PostgreSQL",
+    "Stripe",
+    "GTFS-RT"
+  ],
+  "services": {
+    "heading": "Four roles, <span class=\"brace\">{</span>one operator<span class=\"brace\">}</span>.",
+    "intro": "Most of my projects don't fit cleanly into one job description, so I don't pretend they do. The same person who scopes the architecture writes the migrations, ships the deploy pipeline, and designs the marketing site.",
+    "items": [
+      {
+        "num": "/ 01",
+        "title": "Fullstack <br/>development",
+        "body": "End-to-end product work in TypeScript. NextJS, NestJS and Hono on the server side; React, React Native and Svelte on the client.",
+        "icon": "<path d=\"M8 6L2 12l6 6M16 6l6 6-6 6\"/>"
+      },
+      {
+        "num": "/ 02",
+        "title": "Solution <br/>architecture",
+        "body": "Mapping a business problem to a system. Domain decomposition, data modelling, integration boundaries, sane migration paths.",
+        "icon": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\"/>"
+      },
+      {
+        "num": "/ 03",
+        "title": "Devops &amp; <br/>infrastructure",
+        "body": "CI/CD pipelines, container orchestration, observability and the unglamorous infrastructure that keeps shipped products shipped.",
+        "icon": "<path d=\"M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\"/>"
+      },
+      {
+        "num": "/ 04",
+        "title": "Graphic <br/>design",
+        "body": "Brand systems, marks, marketing surfaces and the application UI that wears them. The lynx mark to your left is house work.",
+        "icon": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20M2 12h20\"/>"
+      }
+    ]
+  },
+  "stack": {
+    "heading": "Tools <span class=\"brace\">{</span>I reach for<span class=\"brace\">}</span>.",
+    "items": [
+      {
+        "name": "TypeScript",
+        "featured": true
+      },
+      {
+        "name": "NextJS",
+        "featured": true
+      },
+      {
+        "name": "NestJS",
+        "featured": true
+      },
+      {
+        "name": "Hono"
+      },
+      {
+        "name": "React",
+        "featured": true
+      },
+      {
+        "name": "React Native"
+      },
+      {
+        "name": "Expo"
+      },
+      {
+        "name": "Svelte"
+      },
+      {
+        "name": "Tailwind",
+        "featured": true
+      },
+      {
+        "name": "PayloadCMS"
+      },
+      {
+        "name": "PostgreSQL"
+      },
+      {
+        "name": "Prisma"
+      },
+      {
+        "name": "Stripe"
+      },
+      {
+        "name": "Docker"
+      },
+      {
+        "name": "GitHub Actions"
+      },
+      {
+        "name": "GTFS-RT"
+      },
+      {
+        "name": "Figma"
+      },
+      {
+        "name": "+ many more"
+      }
+    ]
+  },
+  "about": {
+    "heading": "I prefer to <span class=\"brace\">{</span>own<span class=\"brace\">}</span> the outcome.",
+    "paragraphs": [
+      "The work I'm proudest of started as a single conversation about a real operational pain — a frantic spreadsheet, a 3 AM invoice run, a dispatcher Frankenstacking five vendor tools — and ended as a system the team uses every day without thinking about it.",
+      "I'm comfortable owning a project from architecture through deployment, and equally comfortable plugging into an existing team where you need a senior pair of hands. ReqLynx Digitalworks is the studio name; the work is mine."
+    ],
+    "stats": [
+      {
+        "num": "10+",
+        "label": "Production systems"
+      },
+      {
+        "num": "6",
+        "label": "Years in industry"
+      },
+      {
+        "num": "4",
+        "label": "Roles, one operator"
+      },
+      {
+        "num": "∞",
+        "label": "Cups of coffee"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Have something <span class=\"brace\">{</span>operational<span class=\"brace\">}</span><br/>that needs building?",
+    "intro": "The shortest path from your problem to a working system is a 30-minute conversation. Tell me what's on fire.",
+    "ctas": [
+      {
+        "label": "hello@reqlynx.dev",
+        "href": "mailto:hello@reqlynx.dev",
+        "primary": true,
+        "arrow": "↗"
+      },
+      {
+        "label": "Schedule a call",
+        "href": "https://calendar.app.google/xRMfhvrAsEg2vkpz9",
+        "arrow": "→"
+      }
+    ],
+    "meta": [
+      {
+        "text": "EU · Poland · CEST"
+      },
+      {
+        "text": "github.com/jakubrekowski",
+        "href": "https://github.com/jakubrekowski"
+      },
+      {
+        "text": "linkedin/in/jakub-rekowski",
+        "href": "https://www.linkedin.com/in/jakub-rekowski/"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 ReqLynx Digitalworks · Jakub Rekowski",
+    "version": "v1.0.0"
+  }
+}

@@ -1,0 +1,18 @@
+---
+import site from '../data/site.json';
+const { footer, brand } = site;
+const variant = Astro.props.variant ?? 'home';
+---
+<footer>
+  <div class="shell footer-inner">
+    <div class="left">
+      <svg style="width:18px;height:24px" viewBox="0 0 98 127" aria-hidden="true"><use href={`${brand.icon}#body`}></use></svg>
+      <span>{footer.copyright}</span>
+    </div>
+    {variant === 'home' ? (
+      <div>{footer.version} · Built in <span class="green">{'{ TypeScript }'}</span></div>
+    ) : (
+      <div><a href="/">← Back to home</a></div>
+    )}
+  </div>
+</footer>

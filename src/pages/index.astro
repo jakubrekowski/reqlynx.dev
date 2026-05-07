@@ -1,0 +1,137 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import site from '../data/site.json';
+import projects from '../data/projects.json';
+
+const { hero, services, stack, marquee, about, contact } = site;
+const cw = hero.codeWindow;
+const lineNumbers = Array.from({ length: cw.lines ?? 20 }, (_, i) => i + 1).join('\n');
+---
+<Base title="Jakub Rekowski — ReqLynx Digitalworks" description="Fullstack developer, solution architect, devops & graphic designer. ReqLynx Digitalworks.">
+  <Nav />
+  <main>
+    <section class="hero shell" data-screen-label="01 Hero">
+      <div class="hero-status">
+        <span class="dot"></span>
+        <span class="available">{hero.statusLabel}</span>
+      </div>
+      <h1 set:html={hero.headlineHtml} />
+      <div class="hero-sub">
+        <div class="ctas">
+          {hero.ctas.map((c) => (
+            <a href={c.href} class={`btn${c.primary ? ' btn-primary' : ''}`}>{c.label} <span class="arrow">{c.arrow}</span></a>
+          ))}
+        </div>
+        <p set:html={hero.introHtml} />
+      </div>
+
+      <div class="code-window" aria-hidden="true">
+        <div class="cw-bar">
+          <div class="cw-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="cw-tabs">
+            {cw.tabs.map((t) => <div class={`cw-tab${t.active ? ' active' : ''}`}>{t.label}</div>)}
+          </div>
+          <div class="cw-path">{cw.path}</div>
+        </div>
+        <div class="cw-body">
+          <aside class="cw-side" set:html={cw.files}></aside>
+          <div class="cw-code">
+            <div class="cw-lines">{lineNumbers}</div><div class="cw-source" set:html={cw.sourceHtml}></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        {[...marquee, ...marquee].map((m) => <span>{m}</span>)}
+      </div>
+    </div>
+
+    <section class="shell" id="services" data-screen-label="02 Services">
+      <div class="services-head">
+        <div>
+          <div class="eyebrow">// services</div>
+          <h2 set:html={services.heading} />
+        </div>
+        <p>{services.intro}</p>
+      </div>
+      <div class="services-grid">
+        {services.items.map((s) => (
+          <div class="service">
+            <span class="num">{s.num}</span>
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" set:html={s.icon} />
+            <h3 set:html={s.title} />
+            <p>{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="stack" id="stack" data-screen-label="03 Stack">
+      <div class="shell">
+        <div class="stack-head">
+          <div class="eyebrow" style="justify-content:center">// stack</div>
+          <h2 set:html={stack.heading} />
+        </div>
+        <div class="stack-grid">
+          {stack.items.map((s) => (
+            <div class={`stack-cell${s.featured ? ' featured' : ''}`}>{s.name}</div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="shell" id="work" data-screen-label="04 Work">
+      <div class="projects-head">
+        <div>
+          <div class="eyebrow">// selected work</div>
+          <h2>Things I've <span class="brace">{'{'}</span>shipped<span class="brace">{'}'}</span>.</h2>
+        </div>
+        <p style="text-align:right">Ten production systems across events, transit, hospitality and corporate web. Each card opens a writeup with the brief, the architecture and the trade-offs.</p>
+      </div>
+      <div class="projects-grid">
+        {projects.map((p) => <ProjectCard project={p} />)}
+      </div>
+    </section>
+
+    <section class="shell" id="about" data-screen-label="05 About">
+      <div class="about-block">
+        <div>
+          <div class="eyebrow">// about</div>
+          <h2 set:html={about.heading} />
+        </div>
+        <div>
+          {about.paragraphs.map((p) => <p>{p}</p>)}
+          <div class="about-stats">
+            {about.stats.map((s) => (
+              <div class="stat"><div class="num">{s.num}</div><div class="lbl">{s.label}</div></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell" id="contact" data-screen-label="06 Contact">
+      <div class="contact-block">
+        <div class="eyebrow" style="justify-content:center">// let's talk</div>
+        <h2 set:html={contact.heading} />
+        <p>{contact.intro}</p>
+        <div class="ctas">
+          {contact.ctas.map((c) => (
+            <a href={c.href} class={`btn${c.primary ? ' btn-primary' : ''}`}>{c.label} <span class="arrow">{c.arrow}</span></a>
+          ))}
+        </div>
+        <div class="contact-meta">
+          {contact.meta.map((m) => (
+            <span>{m.href ? <a href={m.href}>{m.text}</a> : m.text}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer variant="home" />
+</Base>

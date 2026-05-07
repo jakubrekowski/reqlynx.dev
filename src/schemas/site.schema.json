@@ -1,0 +1,188 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "site.schema.json",
+  "title": "Site",
+  "type": "object",
+  "required": ["brand", "nav", "hero", "services", "stack", "marquee", "about", "contact", "footer"],
+  "properties": {
+    "brand": {
+      "type": "object",
+      "required": ["name1", "name2", "icon"],
+      "properties": {
+        "name1": { "type": "string" },
+        "name2": { "type": "string" },
+        "icon": { "type": "string" }
+      }
+    },
+    "nav": {
+      "type": "object",
+      "required": ["links", "cta"],
+      "properties": {
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "href"],
+            "properties": {
+              "label": { "type": "string" },
+              "href": { "type": "string" }
+            }
+          }
+        },
+        "cta": {
+          "type": "object",
+          "required": ["label", "href"],
+          "properties": {
+            "label": { "type": "string" },
+            "href": { "type": "string" }
+          }
+        }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "required": ["statusLabel", "headlineHtml", "introHtml", "ctas", "codeWindow"],
+      "properties": {
+        "statusLabel": { "type": "string" },
+        "headlineHtml": { "type": "string" },
+        "introHtml": { "type": "string" },
+        "ctas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "href"],
+            "properties": {
+              "label": { "type": "string" },
+              "href": { "type": "string" },
+              "primary": { "type": "boolean" },
+              "arrow": { "type": "string", "enum": ["→", "↗"] }
+            }
+          }
+        },
+        "codeWindow": {
+          "type": "object",
+          "required": ["tabs", "path", "files", "sourceHtml"],
+          "properties": {
+            "tabs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["label"],
+                "properties": {
+                  "label": { "type": "string" },
+                  "active": { "type": "boolean" }
+                }
+              }
+            },
+            "path": { "type": "string" },
+            "files": { "type": "string", "description": "raw HTML for sidebar tree" },
+            "sourceHtml": { "type": "string", "description": "highlighted source HTML" },
+            "lines": { "type": "integer" }
+          }
+        }
+      }
+    },
+    "services": {
+      "type": "object",
+      "required": ["heading", "intro", "items"],
+      "properties": {
+        "heading": { "type": "string" },
+        "intro": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["num", "title", "body", "icon"],
+            "properties": {
+              "num": { "type": "string" },
+              "title": { "type": "string" },
+              "body": { "type": "string" },
+              "icon": { "type": "string", "description": "inline SVG paths markup" }
+            }
+          }
+        }
+      }
+    },
+    "stack": {
+      "type": "object",
+      "required": ["heading", "items"],
+      "properties": {
+        "heading": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string" },
+              "featured": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "marquee": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "about": {
+      "type": "object",
+      "required": ["heading", "paragraphs", "stats"],
+      "properties": {
+        "heading": { "type": "string" },
+        "paragraphs": { "type": "array", "items": { "type": "string" } },
+        "stats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["num", "label"],
+            "properties": {
+              "num": { "type": "string" },
+              "label": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "required": ["heading", "intro", "ctas", "meta"],
+      "properties": {
+        "heading": { "type": "string" },
+        "intro": { "type": "string" },
+        "ctas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "href"],
+            "properties": {
+              "label": { "type": "string" },
+              "href": { "type": "string" },
+              "primary": { "type": "boolean" },
+              "arrow": { "type": "string" }
+            }
+          }
+        },
+        "meta": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["text"],
+            "properties": {
+              "text": { "type": "string" },
+              "href": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "required": ["copyright", "version"],
+      "properties": {
+        "copyright": { "type": "string" },
+        "version": { "type": "string" }
+      }
+    }
+  }
+}
