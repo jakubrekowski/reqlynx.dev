@@ -7,6 +7,7 @@
     "org": "ShadowLynx",
     "year": "2024",
     "role": "Fullstack + Architecture",
+    "status": "Shipped",
     "summary": "Multi-tenant event platform built with SvelteKit. Featuring mass PDF badge generation, product management, and complex payment routing.",
     "tags": [
       "SvelteKit",
@@ -42,7 +43,7 @@
     "num": "02",
     "name": "Weź Zarezerwuj",
     "org": "Internal",
-    "year": "2024",
+    "year": "2025",
     "role": "Fullstack",
     "summary": "Desk reservation system for hybrid open-space offices. Floor plans, recurring bookings and team-aware availability.",
     "tags": [
@@ -73,7 +74,7 @@
     "num": "03",
     "name": "RailOps — Corporate Site",
     "org": "RailOps",
-    "year": "2024",
+    "year": "2025",
     "role": "Design + Frontend",
     "summary": "Marketing site for an international rail operator. Bilingual content, live timetable embeds, deep CMS-backed editing.",
     "tags": [
@@ -90,6 +91,11 @@
       "Bilingual (PL / EN) with full content parity",
       "Live timetable widget pulled from operations API",
       "Press room with structured release archive"
+    ],
+    "screenshots": [
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/railops_org_1.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/railops_org_2.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/railops_org_3.png"
     ]
   },
   {
@@ -97,7 +103,7 @@
     "num": "04",
     "name": "RailOps Ouroboros",
     "org": "RailOps",
-    "year": "2024",
+    "year": "2025",
     "role": "Solution Architect + Fullstack",
     "summary": "Operations platform for international and domestic rail. Traction calculations, document generation, project management.",
     "tags": [
@@ -118,31 +124,39 @@
       "Audit-grade change history on every operational entity",
       "Role-based access for dispatchers, planners and auditors"
     ],
-    "screenshots": []
+    "screenshots": [
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/railops_ouroboros_1.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/railops_ouroboros_2.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/railops_ouroboros_3.png"
+    ]
   },
   {
     "id": "railops-gtfs",
     "num": "05",
     "name": "RailOps GTFS Live",
     "org": "RailOps",
-    "year": "2024",
+    "year": "2025",
     "role": "Fullstack",
-    "summary": "Live tracking system for public transit vehicles with public-facing map. GTFS-RT ingestion at scale.",
+    "summary": "Real-time transit tracking system integrated into the RailOps Corporate platform. High-frequency GTFS-RT ingestion with Hono and WebSocket updates.",
     "tags": [
-      "NestJS",
+      "Hono",
       "GTFS-RT",
       "PostgreSQL",
-      "WebSockets"
+      "WebSockets",
+      "NextJS"
     ],
     "span": "span-6",
-    "overview": "A real-time public transit tracking service: it ingests GTFS-Realtime feeds from multiple operators, normalizes them, and serves them to a public map and to downstream systems.",
+    "overview": "A real-time public transit tracking engine that serves as a core component of the RailOps Corporate ecosystem. It ingests high-frequency GTFS-Realtime feeds, normalizes vehicle telemetry, and provides live map visualization directly within the corporate site.",
     "challenge": "Live transit feeds arrive in different shapes and at different cadences. Riders want a single map; operators want a single API.",
-    "solution": "A streaming NestJS pipeline normalizes incoming feeds, deduplicates vehicle reports, and broadcasts diffs over WebSockets to a NextJS map app.",
+    "solution": "A high-performance Hono-based streaming pipeline manages feed ingestion and normalization. Live vehicle positions are broadcast via WebSockets to a NextJS-powered dashboard integrated into the RailOps Corporate frontend, ensuring seamless real-time updates for riders.",
     "features": [
       "GTFS-Realtime ingestion across multiple operator feeds",
-      "WebSocket-driven public map",
+      "WebSocket-driven public map integrated with Corporate Site",
       "Historical playback for incident review",
       "Operator-facing health dashboard"
+    ],
+    "screenshots": [
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/railops_gtfs_1.png"
     ]
   },
   {
@@ -152,16 +166,17 @@
     "org": "SilFur",
     "year": "2023",
     "role": "Design + Frontend",
+    "status": "Decommissioned",
     "summary": "Brand-driven corporate site for a community-focused organization. CMS-backed, fully bilingual.",
     "tags": [
-      "Svelte",
-      "PayloadCMS",
+      "React",
+      "Strapi",
       "Tailwind"
     ],
-    "span": "span-3",
+    "span": "span-6",
     "overview": "A polished marketing site for SilFur — the public anchor for the convention system that runs underneath it.",
     "challenge": "A community brand needs warmth without sacrificing professionalism, and self-edit power for a small team.",
-    "solution": "SvelteKit on the front, Payload on the back. The visual system intentionally diverges from the convention app while sharing identity primitives.",
+    "solution": "React on the front, Strapi on the back. The visual system intentionally diverges from the convention app while sharing identity primitives.",
     "features": [
       "Block-based authoring",
       "Bilingual content",
@@ -175,17 +190,18 @@
     "org": "SilFur",
     "year": "2023",
     "role": "Fullstack",
+    "status": "Decommissioned",
     "summary": "Conference platform: attendance, hotel-room claiming, scheduling, agenda, integrated payments.",
     "tags": [
-      "NextJS",
       "NestJS",
+      "React",
       "React Native",
       "Stripe"
     ],
     "span": "span-6",
     "overview": "The operational system behind SilFur conventions. Handles registration, hotel room claiming with roommate matching, dynamic scheduling, and the on-site mobile companion.",
     "challenge": "Conventions are a frenzy of micro-decisions: who shares a room, who is on which panel, who paid, who showed up. Spreadsheet workflows collapse the moment something changes.",
-    "solution": "A NestJS API drives a NextJS organizer console and an Expo-based attendee app. Payments through Stripe; rooms with a claim-and-confirm flow that prevents double-booking and surfaces roommate compatibility.",
+    "solution": "A NestJS API drives a React-based organizer console and an Expo-based attendee app. Payments through Stripe; rooms with a claim-and-confirm flow that prevents double-booking and surfaces roommate compatibility.",
     "features": [
       "Hotel room claiming with roommate matching",
       "Dynamic schedule with attendee-side personalization",
@@ -199,22 +215,30 @@
     "num": "08",
     "name": "Fuzzler",
     "org": "Convention",
-    "year": "2023",
+    "year": "2026",
     "role": "Design + Frontend",
-    "summary": "Microsite for an annual convention with playful, motion-rich brand expression.",
+    "status": "Shipped",
+    "summary": "Microsite for an annual convention with playful, motion-rich brand expression. Built with NextJS and PayloadCMS.",
     "tags": [
-      "Svelte",
-      "GSAP",
+      "NextJS",
+      "PayloadCMS",
       "Tailwind"
     ],
-    "span": "span-3",
+    "span": "span-6",
     "overview": "A short-lived but high-impact microsite for an annual convention — playful, motion-rich, and unapologetically branded.",
     "challenge": "Stand out in a crowded convention calendar with a one-page experience that earns shares.",
-    "solution": "A Svelte page built around a single hero animation, with a tightly-scoped scroll choreography.",
+    "solution": "A NextJS-powered microsite with content managed via PayloadCMS. The design focuses on high-impact visuals and motion choreography that scales across devices while remaining easy for the team to update.",
     "features": [
       "Motion-rich hero",
       "Schedule and ticketing CTA",
-      "Optimized for share previews"
+      "Optimized for share previews",
+      "CMS-backed content management"
+    ],
+    "screenshots": [
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/fuzzler_1.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/fuzzler_2.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/fuzzler_3.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/fuzzler_4.png"
     ]
   },
   {
@@ -222,21 +246,29 @@
     "num": "09",
     "name": "Warszawski Frustuitwalk",
     "org": "Annual Event",
-    "year": "2024",
+    "year": "2025",
     "role": "Design + Build",
-    "summary": "Microsite for an annual Warsaw event. Wayfinding, schedule, simple registration.",
+    "summary": "Microsite for an annual Warsaw event built with NextJS and PayloadCMS. Wayfinding, schedule, simple registration.",
     "tags": [
       "NextJS",
+      "PayloadCMS",
       "Tailwind"
     ],
-    "span": "span-4",
+    "span": "span-8",
     "overview": "The web home for an annual event in Warsaw — wayfinding, schedule, registration, all in one focused page.",
     "challenge": "Make the event easy to discover, easy to attend, easy to share.",
-    "solution": "A single tightly-edited NextJS page with map embeds, schedule, and a registration funnel.",
+    "solution": "A tightly-edited NextJS page with content managed via PayloadCMS. It integrates map embeds, dynamic schedules, and a streamlined registration funnel.",
     "features": [
       "Map-based wayfinding",
       "Day-by-day schedule",
-      "Lightweight registration"
+      "Lightweight registration",
+      "CMS-backed content updates"
+    ],
+    "screenshots": [
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/wfw_1.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/wfw_2.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/wfw_3.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/wfw_4.png"
     ]
   },
   {
@@ -244,7 +276,7 @@
     "num": "10",
     "name": "Ameliówka — Reservations",
     "org": "Hotel Ops",
-    "year": "2024",
+    "year": "2026",
     "role": "Fullstack",
     "summary": "Internal reservation system for stage and conference room bookings. Client management, internal hotel ops.",
     "tags": [
@@ -261,6 +293,11 @@
       "Client and contact CRM",
       "Quote and contract document generation",
       "Internal audit trail"
+    ],
+    "screenshots": [
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/ameliowka_1.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/ameliowka_2.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/ameliowka_3.png"
     ]
   }
 ]

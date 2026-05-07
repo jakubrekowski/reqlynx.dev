@@ -33,12 +33,7 @@ const nameHtml = project.name.replace(/—/g, '<span class="brace">—</span>');
       <div class="eyebrow">// project [ {project.num} ]</div>
       <h1 set:html={nameHtml} />
       <p style="font-size:20px;max-width:62ch;color:var(--ink-dim)">{project.summary}</p>
-      <div class="detail-meta">
-        <div class="item"><div class="lbl">Client</div><div class="val">{project.org}</div></div>
-        <div class="item"><div class="lbl">Year</div><div class="val">{project.year}</div></div>
-        <div class="item"><div class="lbl">Role</div><div class="val">{project.role}</div></div>
-        <div class="item"><div class="lbl">Status</div><div class="val"><span style="color:var(--acc)">●</span> Shipped</div></div>
-      </div>
+
     </section>
 
     <section class="shell">
@@ -83,7 +78,7 @@ const nameHtml = project.name.replace(/—/g, '<span class="brace">—</span>');
           <div class="row"><span class="k">Client</span><span class="v">{project.org}</span></div>
           <div class="row"><span class="k">Year</span><span class="v">{project.year}</span></div>
           <div class="row"><span class="k">Role</span><span class="v">{project.role}</span></div>
-          <div class="row"><span class="k">Status</span><span class="v">Shipped</span></div>
+          <div class="row"><span class="k">Status</span><span class="v">{project.status || 'Shipped'}</span></div>
           <div class="row"><span class="k">Type</span><span class="v">Production</span></div>
 
           <h4 style="margin-top:28px">// stack</h4>
