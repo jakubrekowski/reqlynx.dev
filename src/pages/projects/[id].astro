@@ -3,14 +3,19 @@ import Base from '../../layouts/Base.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
-import ProjectGallery from '../../components/ProjectGallery.astro';
 import projects from '../../data/projects.json';
 
 export function getStaticPaths() {
   return projects.map((p) => ({ params: { id: p.id }, props: { project: p } }));
 }
 
-const { project } = Astro.props;
+const { id } = Astro.params;
+const project = projects.find((p) => p.id === id);
+
+if (!project) {
+  return Astro.redirect('/404');
+}
+
 const others = projects.filter((p) => p.id !== project.id).slice(0, 2);
 const nameHtml = project.name.replace(/—/g, '<span class="brace">—</span>');
 ---
@@ -43,7 +48,14 @@ const nameHtml = project.name.replace(/—/g, '<span class="brace">—</span>');
           <p>{project.overview ?? project.summary}</p>
 
           {project.screenshots && project.screenshots.length > 0 ? (
-            <ProjectGallery screenshots={project.screenshots} />
+            <div class="project-gallery">
+              {project.screenshots.map((src, index) => (
+                <div class="gallery-item">
+                  <img src={src} alt={`${project.name} screenshot ${index + 1}`} loading="lazy" />
+                  <div class="gallery-frame"></div>
+                </div>
+              ))}
+            </div>
           ) : (
             <div class="placeholder-img" aria-hidden="true">
               <span>// product shot — to be added</span>
@@ -80,7 +92,18 @@ const nameHtml = project.name.replace(/—/g, '<span class="brace">—</span>');
           </div>
 
           <h4 style="margin-top:28px">// links</h4>
-          <div class="row"><span class="k">Live</span><span class="v dim">on request</span></div>
+          <div class="row">
+            <span class="k">Live</span>
+            <span class="v">
+              {project.link ? (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" style="color:var(--acc)">
+                  visit site <span class="arrow" style="font-size: 0.8em;">↗</span>
+                </a>
+              ) : (
+                <span class="dim">on request</span>
+              )}
+            </span>
+          </div>
           <div class="row"><span class="k">Source</span><span class="v dim">private</span></div>
 
           <a href="/#contact" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:24px">Start a project <span class="arrow">↗</span></a>
@@ -96,4 +119,19 @@ const nameHtml = project.name.replace(/—/g, '<span class="brace">—</span>');
     </section>
   </main>
   <Footer variant="detail" />
+  <style>
+    .project-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin: 40px 0 64px;
+    }
+    
+    @media (max-width: 720px) {
+      .project-gallery {
+        gap: 24px;
+        margin: 32px 0 48px;
+      }
+    }
+  </style>
 </Base>

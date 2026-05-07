@@ -21,7 +21,8 @@
       "challenge": { "type": "string" },
       "solution": { "type": "string" },
       "features": { "type": "array", "items": { "type": "string" } },
-      "screenshots": { "type": "array", "items": { "type": "string" } }
+      "screenshots": { "type": "array", "items": { "type": "string" } },
+      "link": { "type": "string" }
     }
   }
 }

@@ -7,29 +7,34 @@
     "org": "ShadowLynx",
     "year": "2024",
     "role": "Fullstack + Architecture",
-    "summary": "Event & attendance platform with mass invoice generation and integrated payment processing. Part of the ShadowLynx ecosystem.",
+    "summary": "Multi-tenant event platform built with SvelteKit. Featuring mass PDF badge generation, product management, and complex payment routing.",
     "tags": [
-      "NextJS",
-      "NestJS",
-      "PayloadCMS",
+      "SvelteKit",
+      "Tailwind",
       "Stripe",
-      "PostgreSQL"
+      "PostgreSQL",
+      "TypeScript"
     ],
     "span": "span-6",
     "featured": true,
-    "overview": "ShadowLynx Forest is a full-cycle event operations platform built for the ShadowLynx ecosystem. It coordinates everything from registration and ticketing through real-time attendance to bulk financial reconciliation — replacing a stack of spreadsheets, mailing lists and manual invoice work with a single product surface.",
-    "challenge": "Conventions and recurring events generate hundreds of invoices in compressed time windows. The team needed a system that could ingest registrations, verify payments, and emit compliant invoices without a human in the loop, while still allowing operators to override edge cases.",
-    "solution": "A NestJS service handles the financial pipeline with a queue-based invoice generator, while a NextJS dashboard gives organizers live visibility. PayloadCMS administers content (sessions, speakers, schedules) and the public-facing pages. Payments flow through Stripe with reconciliation jobs that match settlements to invoices nightly.",
+    "link": "https://app.fursuitwalk.org/",
+    "overview": "ShadowLynx Forest is a high-performance event operations engine designed for scale. It handles complex organizational hierarchies, multiple concurrent events, and diverse payment routing, providing a seamless experience from registration to physical product fulfillment.",
+    "challenge": "Organizers needed a way to manage not just attendees, but also complex inventory and personalized physical assets (badges) at scale, while routing payments to different entities based on event ownership.",
+    "solution": "A SvelteKit-powered platform that integrates a dynamic PDF rendering engine for custom-branded badges. It features a robust multi-tenant architecture supporting independent payment receivers and a QR-based fulfillment system for on-site product management.",
     "features": [
-      "Mass invoice generation with PDF rendering and accounting-system export",
-      "Real-time attendance tracking with QR-coded badges",
-      "Multi-tenant org structure for the broader ShadowLynx ecosystem",
-      "Webhook-driven payment lifecycle with retry & dunning logic",
-      "Operator dashboard with audit trail on every financial action"
+      "Mass PDF generation for personalized event badges with user-provided graphics",
+      "Multi-tenant architecture supporting multiple organizations, events, and payment receivers",
+      "Integrated product management system with real-time inventory tracking",
+      "QR-based on-site product pickup and attendee verification",
+      "Streamlined financial routing for distributed payment processing"
     ],
     "screenshots": [
-      "https://images.unsplash.com/photo-1707568774879-49bcd6421a00",
-      "https://images.unsplash.com/photo-1707568774879-49bcd6421a00"
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/forest_1.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/forest_2.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/forest_3.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/forest_4.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/forest_5.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/forest_6.png"
     ]
   },
   {
@@ -58,7 +63,9 @@
       "Calendar integrations for personal sync"
     ],
     "screenshots": [
-      "/assets/projects/wez-zarezerwuj-1.png"
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/wezzarezerwuj_1.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/wezzarezerwuj_2.png",
+      "https://storage.googleapis.com/reqlynx-cdn/reqlynx-dev-work/wezzarezerwuj_3.png"
     ]
   },
   {
@@ -111,10 +118,7 @@
       "Audit-grade change history on every operational entity",
       "Role-based access for dispatchers, planners and auditors"
     ],
-    "screenshots": [
-      "/assets/projects/railops-ouroboros-1.png",
-      "/assets/projects/railops-ouroboros-2.png"
-    ]
+    "screenshots": []
   },
   {
     "id": "railops-gtfs",
