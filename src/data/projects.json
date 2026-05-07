@@ -8,7 +8,13 @@
     "year": "2024",
     "role": "Fullstack + Architecture",
     "summary": "Event & attendance platform with mass invoice generation and integrated payment processing. Part of the ShadowLynx ecosystem.",
-    "tags": ["NextJS", "NestJS", "PayloadCMS", "Stripe", "PostgreSQL"],
+    "tags": [
+      "NextJS",
+      "NestJS",
+      "PayloadCMS",
+      "Stripe",
+      "PostgreSQL"
+    ],
     "span": "span-6",
     "featured": true,
     "overview": "ShadowLynx Forest is a full-cycle event operations platform built for the ShadowLynx ecosystem. It coordinates everything from registration and ticketing through real-time attendance to bulk financial reconciliation — replacing a stack of spreadsheets, mailing lists and manual invoice work with a single product surface.",
@@ -20,6 +26,10 @@
       "Multi-tenant org structure for the broader ShadowLynx ecosystem",
       "Webhook-driven payment lifecycle with retry & dunning logic",
       "Operator dashboard with audit trail on every financial action"
+    ],
+    "screenshots": [
+      "https://images.unsplash.com/photo-1707568774879-49bcd6421a00",
+      "https://images.unsplash.com/photo-1707568774879-49bcd6421a00"
     ]
   },
   {
@@ -30,7 +40,12 @@
     "year": "2024",
     "role": "Fullstack",
     "summary": "Desk reservation system for hybrid open-space offices. Floor plans, recurring bookings and team-aware availability.",
-    "tags": ["NextJS", "React", "Tailwind", "Hono"],
+    "tags": [
+      "NextJS",
+      "React",
+      "Tailwind",
+      "Hono"
+    ],
     "span": "span-6",
     "overview": "A desk reservation product for organizations operating hybrid open-space offices. Built around a visual floor-plan picker rather than a list — booking a desk feels like picking a seat at the cinema.",
     "challenge": "Hot-desking only works if employees can find their team and a workable spot in seconds. Most existing tools surface lists of room codes; they ignore the spatial reality of how people choose where to sit.",
@@ -41,6 +56,9 @@
       "Team awareness — see where your colleagues are sitting today",
       "Admin tools for zones, capacity and blackout periods",
       "Calendar integrations for personal sync"
+    ],
+    "screenshots": [
+      "/assets/projects/wez-zarezerwuj-1.png"
     ]
   },
   {
@@ -51,7 +69,11 @@
     "year": "2024",
     "role": "Design + Frontend",
     "summary": "Marketing site for an international rail operator. Bilingual content, live timetable embeds, deep CMS-backed editing.",
-    "tags": ["NextJS", "PayloadCMS", "Tailwind"],
+    "tags": [
+      "NextJS",
+      "PayloadCMS",
+      "Tailwind"
+    ],
     "span": "span-4",
     "overview": "The public face of RailOps — a corporate site that must speak to investors, regulators, prospective B2B customers and the curious public, in two languages, without becoming brittle every time a route changes.",
     "challenge": "Rail operators publish constantly: route additions, service notices, press releases, regulatory updates. The site had to give the comms team direct authoring power without involving a developer for every edit.",
@@ -71,7 +93,12 @@
     "year": "2024",
     "role": "Solution Architect + Fullstack",
     "summary": "Operations platform for international and domestic rail. Traction calculations, document generation, project management.",
-    "tags": ["NextJS", "NestJS", "PostgreSQL", "TypeScript"],
+    "tags": [
+      "NextJS",
+      "NestJS",
+      "PostgreSQL",
+      "TypeScript"
+    ],
     "span": "span-8",
     "featured": true,
     "overview": "Ouroboros is the operational nervous system for RailOps — the tool dispatchers, route engineers and document specialists actually live in. It plans trains, calculates traction, generates regulatory paperwork, and ties projects to schedules across multiple national networks.",
@@ -83,6 +110,10 @@
       "Project & milestone tracking tied to operational runs",
       "Audit-grade change history on every operational entity",
       "Role-based access for dispatchers, planners and auditors"
+    ],
+    "screenshots": [
+      "/assets/projects/railops-ouroboros-1.png",
+      "/assets/projects/railops-ouroboros-2.png"
     ]
   },
   {
@@ -93,7 +124,12 @@
     "year": "2024",
     "role": "Fullstack",
     "summary": "Live tracking system for public transit vehicles with public-facing map. GTFS-RT ingestion at scale.",
-    "tags": ["NestJS", "GTFS-RT", "PostgreSQL", "WebSockets"],
+    "tags": [
+      "NestJS",
+      "GTFS-RT",
+      "PostgreSQL",
+      "WebSockets"
+    ],
     "span": "span-6",
     "overview": "A real-time public transit tracking service: it ingests GTFS-Realtime feeds from multiple operators, normalizes them, and serves them to a public map and to downstream systems.",
     "challenge": "Live transit feeds arrive in different shapes and at different cadences. Riders want a single map; operators want a single API.",
@@ -113,12 +149,20 @@
     "year": "2023",
     "role": "Design + Frontend",
     "summary": "Brand-driven corporate site for a community-focused organization. CMS-backed, fully bilingual.",
-    "tags": ["Svelte", "PayloadCMS", "Tailwind"],
+    "tags": [
+      "Svelte",
+      "PayloadCMS",
+      "Tailwind"
+    ],
     "span": "span-3",
     "overview": "A polished marketing site for SilFur — the public anchor for the convention system that runs underneath it.",
     "challenge": "A community brand needs warmth without sacrificing professionalism, and self-edit power for a small team.",
     "solution": "SvelteKit on the front, Payload on the back. The visual system intentionally diverges from the convention app while sharing identity primitives.",
-    "features": ["Block-based authoring", "Bilingual content", "Press & news section"]
+    "features": [
+      "Block-based authoring",
+      "Bilingual content",
+      "Press & news section"
+    ]
   },
   {
     "id": "silfur-convention",
@@ -128,7 +172,12 @@
     "year": "2023",
     "role": "Fullstack",
     "summary": "Conference platform: attendance, hotel-room claiming, scheduling, agenda, integrated payments.",
-    "tags": ["NextJS", "NestJS", "React Native", "Stripe"],
+    "tags": [
+      "NextJS",
+      "NestJS",
+      "React Native",
+      "Stripe"
+    ],
     "span": "span-6",
     "overview": "The operational system behind SilFur conventions. Handles registration, hotel room claiming with roommate matching, dynamic scheduling, and the on-site mobile companion.",
     "challenge": "Conventions are a frenzy of micro-decisions: who shares a room, who is on which panel, who paid, who showed up. Spreadsheet workflows collapse the moment something changes.",
@@ -149,12 +198,20 @@
     "year": "2023",
     "role": "Design + Frontend",
     "summary": "Microsite for an annual convention with playful, motion-rich brand expression.",
-    "tags": ["Svelte", "GSAP", "Tailwind"],
+    "tags": [
+      "Svelte",
+      "GSAP",
+      "Tailwind"
+    ],
     "span": "span-3",
     "overview": "A short-lived but high-impact microsite for an annual convention — playful, motion-rich, and unapologetically branded.",
     "challenge": "Stand out in a crowded convention calendar with a one-page experience that earns shares.",
     "solution": "A Svelte page built around a single hero animation, with a tightly-scoped scroll choreography.",
-    "features": ["Motion-rich hero", "Schedule and ticketing CTA", "Optimized for share previews"]
+    "features": [
+      "Motion-rich hero",
+      "Schedule and ticketing CTA",
+      "Optimized for share previews"
+    ]
   },
   {
     "id": "frustuitwalk",
@@ -164,12 +221,19 @@
     "year": "2024",
     "role": "Design + Build",
     "summary": "Microsite for an annual Warsaw event. Wayfinding, schedule, simple registration.",
-    "tags": ["NextJS", "Tailwind"],
+    "tags": [
+      "NextJS",
+      "Tailwind"
+    ],
     "span": "span-4",
     "overview": "The web home for an annual event in Warsaw — wayfinding, schedule, registration, all in one focused page.",
     "challenge": "Make the event easy to discover, easy to attend, easy to share.",
     "solution": "A single tightly-edited NextJS page with map embeds, schedule, and a registration funnel.",
-    "features": ["Map-based wayfinding", "Day-by-day schedule", "Lightweight registration"]
+    "features": [
+      "Map-based wayfinding",
+      "Day-by-day schedule",
+      "Lightweight registration"
+    ]
   },
   {
     "id": "ameliowka",
@@ -179,7 +243,11 @@
     "year": "2024",
     "role": "Fullstack",
     "summary": "Internal reservation system for stage and conference room bookings. Client management, internal hotel ops.",
-    "tags": ["NextJS", "Hono", "Tailwind"],
+    "tags": [
+      "NextJS",
+      "Hono",
+      "Tailwind"
+    ],
     "span": "span-4",
     "overview": "An internal reservation system for a hotel — stage and conference room bookings, client management, internal-only operations tooling. No public-facing surface.",
     "challenge": "The team had outgrown the spreadsheet-and-phone-call workflow. Bookings clashed, double-quotes leaked out, history was lost.",

@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
+import ProjectGallery from '../../components/ProjectGallery.astro';
 import projects from '../../data/projects.json';
 
 export function getStaticPaths() {
@@ -41,9 +42,13 @@ const nameHtml = project.name.replace(/—/g, '<span class="brace">—</span>');
           <h2>Overview</h2>
           <p>{project.overview ?? project.summary}</p>
 
-          <div class="placeholder-img" aria-hidden="true">
-            <span>// product shot — to be added</span>
-          </div>
+          {project.screenshots && project.screenshots.length > 0 ? (
+            <ProjectGallery screenshots={project.screenshots} />
+          ) : (
+            <div class="placeholder-img" aria-hidden="true">
+              <span>// product shot — to be added</span>
+            </div>
+          )}
 
           <h2>The brief</h2>
           <p>{project.challenge ?? '—'}</p>
@@ -51,9 +56,6 @@ const nameHtml = project.name.replace(/—/g, '<span class="brace">—</span>');
           <h2>Approach</h2>
           <p>{project.solution ?? '—'}</p>
 
-          <div class="placeholder-img" style="aspect-ratio: 4/3" aria-hidden="true">
-            <span>// architecture diagram — to be added</span>
-          </div>
 
           <h2>What it does</h2>
           <ul>
@@ -61,7 +63,7 @@ const nameHtml = project.name.replace(/—/g, '<span class="brace">—</span>');
           </ul>
 
           <h2>Notes</h2>
-          <p>This page is a living writeup. As the project evolves I'll fill in the screenshots, architecture diagrams and a more detailed account of the trade-offs that shaped it. Reach out if you want a deeper walkthrough of any particular system.</p>
+          <p>This page is a living writeup. As the project evolves I'll fill in the screenshots and a more detailed account of the trade-offs that shaped it. Reach out if you want a deeper walkthrough of any particular system.</p>
         </div>
 
         <aside class="side">

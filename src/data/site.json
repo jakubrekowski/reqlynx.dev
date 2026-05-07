@@ -36,7 +36,7 @@
   "hero": {
     "statusLabel": "Available for new projects · Q3 2026",
     "headlineHtml": "Software for the<br/><span class=\"brace\">{</span>operational<span class=\"brace\">}</span> edge<br/>of real businesses.",
-    "introHtml": "I'm <strong style=\"color:var(--ink)\">Jakub Rekowski</strong> — fullstack developer, solution architect, devops engineer and graphic designer working under the ReqLynx Digitalworks banner. I build production systems for events, transit, hospitality and the people who run them.",
+    "introHtml": "I'm <strong style=\"color:var(--ink)\">Jakub Rekowski</strong> — fullstack developer, solution architect, devops engineer and graphic designer working under the ReqLynx Digitalworks banner. I build production systems for events, transit, venues, e-commerce, and the people who run them.",
     "ctas": [
       {
         "label": "See work",
